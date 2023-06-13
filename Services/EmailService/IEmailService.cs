@@ -1,0 +1,9 @@
+﻿using EmailAppUsingMailKit.Models;
+
+namespace EmailAppUsingMailKit.Services.EmailService
+{
+    public interface IEmailService
+    {
+        void SendEmail(EmailDto request);
+    }
+}
