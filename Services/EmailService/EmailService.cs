@@ -3,7 +3,7 @@ using MailKit.Security;
 using MimeKit.Text;
 using MimeKit;
 using MailKit.Net.Smtp;
-using MailKit;
+
 
 namespace EmailAppUsingMailKit.Services.EmailService
 {
@@ -28,7 +28,7 @@ namespace EmailAppUsingMailKit.Services.EmailService
 
 
             using var smtp = new SmtpClient();
-            smtp.Connect(_config.GetSection("EmailHost").Value, 587, SecureSocketOptions.StartTls);
+            smtp.Connect(_config.GetSection("EmailHost").Value, 465, SecureSocketOptions.Auto);
             smtp.Authenticate(_config.GetSection("EmailUsername").Value, _config.GetSection("EmailPassword").Value);
             smtp.Send(email);
             smtp.Disconnect(true);

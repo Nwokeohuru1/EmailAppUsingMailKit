@@ -23,7 +23,7 @@ namespace EmailAppUsingMailKit.Controllers
         {
             _emailService.SendEmail(request);
 
-            return Ok();
+            return Ok("Email Sent");
             
         }
     }
